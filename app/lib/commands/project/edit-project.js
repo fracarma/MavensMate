@@ -44,6 +44,8 @@ Command.prototype.execute = function() {
           } else {
             return Promise.resolve();
           }
+        }).then( function (){
+          self.getProject().indexMetadata();
         })
         .then(function() {
           resolve('Project updated successfully!');
