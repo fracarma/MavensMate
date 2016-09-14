@@ -50,6 +50,8 @@ Command.prototype.execute = function() {
         } else {
           return Promise.resolve();
         }
+      }).then( function (){
+        project.indexMetadata();
       })
       .then(function() {
         resolve('Metadata successfully refreshed');
